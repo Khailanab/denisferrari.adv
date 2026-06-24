@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Denis Ferrari — Advocacia Especializada | Palhoça SC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy:       #0f1c2e;
+      --navy-mid:   #152336;
+      --navy-card:  #1a2d45;
+      --gold:       #c9a84c;
+      --gold-light: #e2c97e;
+      --gold-dim:   rgba(201,168,76,0.18);
+      --white:      #f5f2eb;
+      --muted:      rgba(245,242,235,0.55);
+      --dim:        rgba(245,242,235,0.25);
+      --border:     rgba(201,168,76,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      background: #0a1520;
+      text-align: center;
+      padding: 9px 1rem;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .topbar::before { content: '● '; }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 70px;
+      border-bottom: 1px solid var(--border);
+      background: var(--navy);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo img { height: 46px; width: auto; display: block; }
+    .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .nav-links a {
+      font-size: 13.5px;
+      font-weight: 400;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-btn {
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      padding: 10px 22px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: background .2s;
+      white-space: nowrap;
+    }
+    .nav-btn:hover { background: var(--gold-light); }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: calc(100vh - 111px);
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2.5rem 3rem;
+      align-items: center;
+    }
+    .hero-left { padding-right: 3rem; }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 2px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    .hero-eyebrow span {
+      font-size: 10.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(38px, 4.5vw, 56px);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 0;
+    }
+    .hero h1 em {
+      display: block;
+      font-style: italic;
+      color: var(--gold);
+    }
+    .hero-desc {
+      margin: 1.5rem 0 2.25rem;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 440px;
+    }
+    .hero-desc strong { color: var(--white); font-weight: 500; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.75rem; }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      padding: 13px 26px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-gold:hover { background: var(--gold-light); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(245,242,235,0.3);
+      padding: 13px 26px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      cursor: pointer;
+      transition: border-color .2s, color .2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-social {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-end;
+    }
+    .social-stat {}
+    .social-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .social-label {
+      font-size: 11.5px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .social-stars { color: var(--gold); font-size: 13px; letter-spacing: 1px; }
+
+    /* hero photo */
+    .hero-right { position: relative; }
+    .hero-photo-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 460px;
+      margin-left: auto;
+    }
+    .hero-photo-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 12px -12px -12px 12px;
+      border: 1px solid var(--border);
+      z-index: 0;
+    }
+    .hero-photo {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+      background: var(--navy-card);
+    }
+    .hero-photo-placeholder {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--navy-card);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--dim);
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      text-align: center;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .hero-photo-placeholder svg { width: 48px; height: 48px; opacity: 0.3; }
+    .hero-photo-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── WHY ROW ── */
+    .why-row {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--navy-mid);
+    }
+    .why-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.25rem 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .why-label {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--dim);
+      white-space: nowrap;
+      font-weight: 500;
+    }
+    .why-items {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .why-item {
+      font-size: 13px;
+      color: var(--muted);
+      padding-bottom: 1px;
+      border-bottom: 1px solid var(--gold-dim);
+    }
+    .why-item strong { color: var(--white); font-weight: 500; }
+
+    /* ── SECTION BASE ── */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5.5rem 2.5rem;
+    }
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .section-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    .section-eyebrow span {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 3rem;
+    }
+
+    /* ── AREAS ── */
+    .areas-bg { background: var(--navy-mid); }
+    .areas-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 1px solid var(--border);
+    }
+    .area-card {
+      padding: 2.5rem;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      transition: background .25s;
+    }
+    .area-card:nth-child(2n) { border-right: none; }
+    .area-card:nth-child(3), .area-card:nth-child(4) { border-bottom: none; }
+    .area-card:hover { background: var(--navy-card); }
+    .area-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .area-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--gold-light);
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+    }
+    .area-desc {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .areas-footnote {
+      margin-top: 1.5rem;
+      font-size: 13px;
+      color: var(--dim);
+    }
+    .areas-footnote a { color: var(--gold); text-decoration: none; }
+    .areas-footnote a:hover { text-decoration: underline; }
+
+    /* ── MÉTODO ── */
+    .metodo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .metodo-left {}
+    .metodo-left p {
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+    .metodo-steps { display: flex; flex-direction: column; gap: 0; padding-top: 0.5rem; }
+    .metodo-step {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 1rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .metodo-step:last-child { border-bottom: none; }
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: var(--gold);
+      padding-top: 3px;
+    }
+    .step-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .step-desc { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+
+    /* ── QUOTE ── */
+    .quote-section {
+      background: var(--navy-mid);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4.5rem 2.5rem;
+      text-align: center;
+    }
+    .quote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(20px, 2.5vw, 30px);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--white);
+      max-width: 680px;
+      margin: 0 auto 1.5rem;
+    }
+    .quote-author {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .quote-role { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    /* ── CONTATO ── */
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contato-info {}
+    .contato-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 1rem;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .contato-row:last-of-type { border-bottom: none; }
+    .contato-label {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      padding-top: 2px;
+    }
+    .contato-val { font-size: 14px; color: var(--white); line-height: 1.55; }
+    .contato-val a { color: var(--gold); text-decoration: none; }
+    .contato-val a:hover { text-decoration: underline; }
+    .contato-val .sub { display: block; font-size: 13px; color: var(--muted); margin-top: 2px; }
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 13px 26px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 1.75rem;
+      transition: background .2s;
+    }
+    .btn-whatsapp:hover { background: var(--gold-light); }
+    .contato-map {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .contato-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      filter: grayscale(30%) saturate(0.8);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      max-width: 100%;
+    }
+    footer img { height: 32px; opacity: 0.65; }
+    .footer-legal { font-size: 11.5px; color: var(--dim); max-width: 420px; line-height: 1.6; text-align: right; }
+    .footer-legal a { color: var(--dim); }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed;
+      bottom: 1.75rem;
+      right: 1.75rem;
+      z-index: 200;
+      background: #25d366;
+      color: #fff;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+      text-decoration: none;
+      transition: transform .2s;
+    }
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float svg { width: 26px; height: 26px; fill: #fff; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 1.25rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 2.5rem 1.25rem 2rem; min-height: auto; }
+      .hero-left { padding-right: 0; }
+      .hero-right { order: -1; }
+      .hero-photo-wrap { max-width: 100%; margin: 0 0 2rem; }
+      .why-inner { padding: 1rem 1.25rem; gap: 1rem; }
+      .section { padding: 3.5rem 1.25rem; }
+      .areas-grid { grid-template-columns: 1fr; }
+      .area-card:nth-child(2n) { border-right: 1px solid var(--border); }
+      .area-card { border-bottom: 1px solid var(--border) !important; }
+      .metodo-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contato-grid { grid-template-columns: 1fr; gap: 2rem; }
+      footer { flex-direction: column; align-items: flex-start; }
+      .footer-legal { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">Atendimento mediante agendamento</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="logo (1).png" alt="Denis Ferrari Advocacia Especializada"/>
+  </div>
+  <div class="nav-links">
+    <a href="#areas">Atuação</a>
+    <a href="#metodo">Método</a>
+    <a href="#contato">Contato</a>
+    <button class="nav-btn" onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Falar com o escritório</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div style="max-width:1100px;margin:0 auto;">
+  <section class="hero" id="inicio">
+    <div class="hero-left">
+      <div class="hero-eyebrow"><span>Casos jurídicos de alta complexidade</span></div>
+      <h1>Direito não é opinião.<em>É método.</em></h1>
+      <p class="hero-desc">Estratégia, técnica e domínio do processo a serviço de quem precisa de <strong>resultado</strong>, e não de promessas. Cada caso conduzido com rigor, do diagnóstico à decisão final.</p>
+      <div class="hero-btns">
+        <a class="btn-gold" href="https://wa.me/554898428-4200" target="_blank">Agendar uma conversa</a>
+        <a class="btn-outline" href="#areas">Áreas de atuação</a>
+      </div>
+      <div class="hero-social">
+        <div class="social-stat">
+          <div class="social-num">5,0</div>
+          <div class="social-stars">★★★★★</div>
+          <div class="social-label">170 avaliações no Google</div>
+        </div>
+        <div class="social-stat">
+          <div class="social-num">4.700+</div>
+          <div class="social-label">acompanham no Instagram</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-placeholder">
+          <img src="denisferrari.jpeg" alt="Dr. Denis Ferrari"></small>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- WHY ROW -->
+<div class="why-row">
+  <div class="why-inner">
+    <span class="why-label">Por que o escritório</span>
+    <div class="why-items">
+      <span class="why-item"><strong>Diagnóstico</strong> honesto do caso</span>
+      <span class="why-item"><strong>Condução</strong> técnica do processo</span>
+      <span class="why-item"><strong>Comunicação</strong> clara, sem juridiquês</span>
+    </div>
+  </div>
+</div>
+
+<!-- ÁREAS -->
+<div class="areas-bg" id="areas">
+  <div class="section">
+    <div class="section-eyebrow"><span>Áreas de atuação</span></div>
+    <div class="section-title">Onde a técnica faz diferença</div>
+    <div class="areas-grid">
+      <div class="area-card">
+        <span class="area-num">01</span>
+        <div class="area-title">Direito de Família e Sucessões</div>
+        <p class="area-desc">Divórcios, guarda, partilha, inventários e planejamento sucessório conduzidos com sensibilidade e técnica.</p>
+      </div>
+      <div class="area-card">
+        <span class="area-num">02</span>
+        <div class="area-title">Direito Imobiliário</div>
+        <p class="area-desc">Regularização imobiliária, usucapião e proteção ao patrimônio.</p>
+      </div>
+      <div class="area-card">
+        <span class="area-num">03</span>
+        <div class="area-title">Direito Empresarial</div>
+        <p class="area-desc">Assessoria a empresas e empresários em conflitos societários, contratos e gestão de riscos jurídicos.</p>
+      </div>
+      <div class="area-card">
+        <span class="area-num">04</span>
+        <div class="area-title">Trabalhista e Previdênciário</div>
+        <p class="area-desc">Relações de trabalho, benefícios previdênciários e proteção dos direitos sociais.</p>
+      </div>
+      <div class="area-card">
+        <span class="area-num">05</span>
+        <div class="area-title">Direito Administrativo</div>
+        <p class="area-desc">Servidores públicos e processos perante a Administração Pública.</p>
+      </div>
+      <div class="area-card">
+        <span class="area-num">06</span>
+        <div class="area-title">Direito Civil</div>
+        <p class="area-desc">Soluções júridicas para as relações pessoais e patrimoniais.</p>
+      </div>
+    </div>
+    <p class="areas-footnote">Não encontrou seu caso? <a href="https://wa.me/554833744493" target="_blank">Fale com o escritório</a> — atuamos também sob demanda em causas de alta complexidade.</p>
+  </div>
+</div>
+
+<!-- MÉTODO -->
+<div id="metodo">
+  <div class="section">
+    <div class="metodo-grid">
+      <div class="metodo-left">
+        <div class="section-eyebrow"><span>O método</span></div>
+        <div class="section-title" style="margin-bottom:1rem">Previsibilidade no lugar de achismo</div>
+        <p>Causas complexas não se vencem com sorte. Cada etapa do trabalho é planejada, documentada e explicada, para que você entenda exatamente onde está o seu processo e o que vem a seguir.</p>
+      </div>
+      <div class="metodo-steps">
+        <div class="metodo-step">
+          <span class="step-num">01</span>
+          <div>
+            <div class="step-title">Diagnóstico</div>
+            <p class="step-desc">Análise honesta da viabilidade e dos riscos antes de qualquer passo.</p>
+          </div>
+        </div>
+        <div class="metodo-step">
+          <span class="step-num">02</span>
+          <div>
+            <div class="step-title">Estratégia</div>
+            <p class="step-desc">Definição da tese, das provas e do caminho processual mais sólido.</p>
+          </div>
+        </div>
+        <div class="metodo-step">
+          <span class="step-num">03</span>
+          <div>
+            <div class="step-title">Condução</div>
+            <p class="step-desc">Acompanhamento técnico de cada etapa, com você sempre informado.</p>
+          </div>
+        </div>
+        <div class="metodo-step">
+          <span class="step-num">04</span>
+          <div>
+            <div class="step-title">Resultado</div>
+            <p class="step-desc">Foco na decisão — negociada ou judicial — que melhor protege seus interesses.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUOTE -->
+<div class="quote-section">
+  <p class="quote-text">O cliente não precisa de promessas. Precisa de estratégia, técnica e domínio do processo.</p>
+  <p class="quote-author">Dr. Denis Ferrari</p>
+  <p class="quote-role">Advogado · Advocacia Especializada</p>
+</div>
+
+<!-- CONTATO -->
+<div id="contato">
+  <div class="section">
+    <div class="section-eyebrow"><span>Contato</span></div>
+    <div class="section-title" style="margin-bottom:2.5rem">Vamos analisar o seu caso</div>
+    <div class="contato-grid">
+      <div class="contato-info">
+        <div class="contato-row">
+          <span class="contato-label">Endereço</span>
+          <span class="contato-val">Edifício Duetto Office — Av. Atílio Pedro Pagani, 115, sala 1305<span class="sub">Pagani, Palhoça — SC · 88132-149</span></span>
+        </div>
+        <div class="contato-row">
+          <span class="contato-label">Telefone</span>
+          <span class="contato-val"><a href="tel:+554833744493">(48) 3374-4493</a> · <a href="https://wa.me/554833744493" target="_blank">WhatsApp</a></span>
+        </div>
+        <div class="contato-row">
+          <span class="contato-label">Horário</span>
+          <span class="contato-val">Segunda a sexta · atendimento até às 17h<span class="sub">Com hora marcada</span></span>
+        </div>
+        <div class="contato-row">
+          <span class="contato-label">Online</span>
+          <span class="contato-val"><a href="https://instagram.com/denisferrari.advocacia" target="_blank">@denisferrari.advocacia</a></span>
+        </div>
+        <a class="btn-whatsapp" href="https://wa.me/554833744493" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.855L.057 23.885a.5.5 0 0 0 .611.611l6.101-1.46A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.504-5.234-1.385l-.374-.217-3.884.93.964-3.784-.236-.386A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          Iniciar conversa no WhatsApp
+        </a>
+      </div>
+      <div class="contato-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3534.412907672911!2d-48.67091920000001!3d-27.642694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x952735a540318875%3A0xe19ebb40262669ae!2sDuetto%20Office!5e0!3m2!1sen!2sbr!4v1782220728615!5m2!1sen!2sbr"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <img src="logo (1).png"/>
+  <p class="footer-legal">Conteúdo de caráter informativo, em conformidade com o Código de Ética e Disciplina da OAB. Resultados variam conforme cada caso.</p>
+</footer>
+
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<a class="wa-float" href="https://wa.me/554833744493" target="_blank" title="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.855L.057 23.885a.5.5 0 0 0 .611.611l6.101-1.46A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.693-.504-5.234-1.385l-.374-.217-3.884.93.964-3.784-.236-.386A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+</body>
+</html>
